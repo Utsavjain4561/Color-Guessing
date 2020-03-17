@@ -14,7 +14,7 @@ var hardBtn = document.getElementById("hardbtn");
 colorDisplay.textContent = pickedColor;
 
 easyBtn.addEventListener("click",function(){
-	h1.style.backgroundColor = bgColor;
+	h1.style.removeProperty("background");
 	mode=3;
 	easyBtn.classList.add("selected");
 	hardBtn.classList.remove("selected");
@@ -29,7 +29,7 @@ easyBtn.addEventListener("click",function(){
 	}
 })
 hardBtn.addEventListener("click",function(){
-	h1.style.backgroundColor = bgColor;
+	h1.style.removeProperty("background");
 	mode = 6;
 	hardBtn.classList.add("selected");
 	easyBtn.classList.remove("selected");
@@ -42,6 +42,7 @@ hardBtn.addEventListener("click",function(){
 	}
 })
 reset.addEventListener("click",function(){
+	h1.style.removeProperty("background");
 	mode=6;
 	hardBtn.classList.add("selected");
 	easyBtn.classList.remove("selected");
@@ -51,7 +52,7 @@ reset.addEventListener("click",function(){
 	for(var i=0;i<squares.length;i++){
 		squares[i].style.backgroundColor = colors[i];
 	}
-	h1.style.backgroundColor = bgColor;
+	
 	message.textContent="";
 })
 
