@@ -42,10 +42,8 @@ hardBtn.addEventListener("click",function(){
 	}
 })
 reset.addEventListener("click",function(){
+	this.textContent = "New Colors";
 	h1.style.removeProperty("background");
-	mode=6;
-	hardBtn.classList.add("selected");
-	easyBtn.classList.remove("selected");
 	colors = generateRandomColors(mode);
 	pickedColor = pickColor(colors);
 	colorDisplay.textContent = pickedColor;
@@ -61,6 +59,7 @@ for(var i=0;i<squares.length;i++){
 	squares[i].style.backgroundColor = colors[i];
 
 	squares[i].addEventListener("click",function(){
+		reset.textContent = "Play Again ?";
 		var clickedColor = this.style.backgroundColor;
 		console.log(clickedColor+" "+pickedColor);
 		if(clickedColor === pickedColor){
@@ -69,7 +68,7 @@ for(var i=0;i<squares.length;i++){
 			h1.style.backgroundColor = pickedColor;
 		}
 		else{
-			message.textContent = "Play Again!!";
+			message.textContent = "Try Again!!";
 			this.style.backgroundColor = bgColor;
 		}
 	})
